@@ -1,22 +1,22 @@
 /* __________variable Declaration____________ */
 /* css variables  */
 :root {
-    --primary:#4d83ff;
-    --darkTheme:#282f3a;
-    --darkGrey :#2e383e;
-    --offWhite:#f7f7f7;
-    --gray:#69707ae5;
-    --darkBlack:#222;
-    --white:#ffffff;
-    --white-smoke:#f2f7f8;
-    --animate: 0.3s linear;
-
+  --primary: #4d83ff;
+  --darkTheme: #282f3a;
+  --darkGrey: #2e383e;
+  --offWhite: #f7f7f7;
+  --gray: #69707ae5;
+  --darkBlack: #222;
+  --white: #ffffff;
+  --white-smoke: #f2f7f8;
+  --lightyellow: lemonchiffon;
+  --animate: 0.3s linear;
 }
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Roboto Mono', monospace;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto Mono", monospace;
 }
 html {
   scroll-behavior: smooth;
@@ -24,72 +24,71 @@ html {
 a {
   text-decoration: none;
 }
-header{
-    font-size: 25px;
-    color: var(--white-smoke);
-    align-self: center;
-    padding-top: 10px;
-    padding-bottom: 10px;
+header {
+  font-size: 25px;
+  color: var(--white-smoke);
+  align-self: center;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
-body{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    background-color:var(--darkTheme);
-}
-
-.counters{
-    padding: 60px 20px;
-    border-top: 3px solid;
-}
-.container{
-    max-width: 100%;
-    max-height: 100%;
-    margin: 0 auto;
-    overflow: auto;
-}
-.counters .container{
-    display: grid;
-    grid-gap: 20px;
-    grid-template-columns: repeat(4,1fr);
-    text-align: center;
-
-}
-.element{
-    position: relative;
-    background-color: var(--darkGrey);
-}
-.element:hover{
-  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-.element h3{
-    color: var(--white-smoke);
-    position: absolute;
-    left: 8rem;
-    top: 10rem;
-}
-.icon{
-    float: left;
-    padding: 2rem;
-}
-.content{
-    padding: 4rem 2rem;
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: var(--darkTheme);
 }
 
-.content h2{
-    color: lemonchiffon;
-    font-size: 20px;
+.counters {
+  padding: 60px 20px;
+  border-top: 1px solid var(--primary);
 }
-.counter{
-    color: var(--offWhite);
-    font-size: 2.5rem;
+.container {
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
+  overflow: auto;
+}
+.container h1 {
+  letter-spacing: 4px;
+}
+.counters .container {
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  text-align: center;
+}
+.element {
+  position: relative;
+  background-color: var(--darkGrey);
+}
+.element:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.element h3 {
+  color: var(--gray);
+  position: absolute;
+  left: 8rem;
+  top: 10rem;
+}
+.icon {
+  float: left;
+  padding: 2rem;
+}
+.content {
+  padding: 4rem 2rem;
 }
 
-@media(max-width:700px){
-    .counters .container
-    {
-        grid-template-columns: repeat(2,1fr);
-    }
+.content h2 {
+  color: var(--lightyellow);
+  font-size: 20px;
+}
+.counter {
+  color: var(--offWhite);
+  font-size: 2.5rem;
+}
 
-    
+@media (max-width: 700px) {
+  .counters .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
