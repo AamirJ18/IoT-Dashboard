@@ -1,0 +1,112 @@
+/* __________variable Declaration____________ */
+/* css variables  */
+:root {
+    --primary:#4d83ff;
+    --darkTheme:#282f3a;
+    --darkGrey :#2e383e;
+    --offWhite:#f7f7f7;
+    --gray:#69707ae5;
+    --darkBlack:#222;
+    --white:#ffffff;
+    --white-smoke:#f2f7f8;
+    --animate: 0.3s linear;
+    --green:#00ff00;
+
+}
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Mono', monospace;
+}
+html {
+  scroll-behavior: smooth;
+}
+a {
+  text-decoration: none;
+}
+header{
+    font-size: 25px;
+    color: var(--white-smoke);
+    align-self: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color:var(--darkTheme);
+}
+
+.counters{
+    padding: 60px 20px;
+    border-top: 1px solid var(--primary);
+    
+}
+.container{
+    max-width: 100%;
+    max-height: 100%;
+    margin: 0 auto;
+    overflow: auto;
+}
+.counters .container{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(4,1fr);
+    text-align: center;
+
+}
+.element{
+    position: relative;
+    background-color: var(--darkGrey);
+    border-radius: 10%;
+}
+.element:hover{
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+.element h3{
+    color: var(--green);
+    position: absolute;
+    left: 8.5rem;
+    top: 9.4rem;
+    text-transform: uppercase;
+}
+.icon{
+    float: left;
+    padding: 2rem;
+}
+.content{
+    padding: 4rem 2rem;
+}
+
+.content h2{
+    color: lemonchiffon;
+    font-size: 20px;
+}
+.counter{
+    color: var(--offWhite);
+    font-size: 70px;
+}
+
+@media(max-width:700px){
+    .counters .container
+    {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .content h2{
+        font-size: 75%;
+    }
+
+    .element h3{
+        font-size: 75%;
+        text-align: center;
+    }
+
+    .container h1{
+        font-size: 75%;
+    }
+
+    
+}
