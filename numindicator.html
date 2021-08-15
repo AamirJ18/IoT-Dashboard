@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+        </style>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://kit.fontawesome.com/f1045cddcf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css"
+        integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
+    <title>IoT Dashboard</title>
+</head>
+
+<body>
+     <header>
+        <div class="container">
+            <h1>MONITORING DEVICES</h1>
+        </div>
+    </header> 
+    <section class="counters">
+        <div class="container">
+            
+            <div class="element">
+                <div class="content">                
+                    <div class="counter" id="field1"></div>
+                </div>
+                <h3>Field 1</h3>
+            </div>
+
+            <div class="element">    
+                <div class="content">
+                    <div class="counter" id="field2"></div>
+                </div>
+                <h3>Field 2</h3>
+            </div>
+
+            <div class="element">
+                <div class="content">
+                    <div class="counter" id="field3"></div>
+                </div>
+                <h3>Field 3</h3>
+            </div>
+
+            <div class="element">
+                <div class="content">
+                    <div class="counter" id="field4"></div>
+                </div>
+                <h3>Field 4</h3>
+            </div>
+
+            <div class="element">
+                <div class="content">
+                    <div class="counter" id="field5"></div>
+                </div>
+                <h3>Field 5</h3>
+            </div>
+
+            <div class="element">
+                <div class="content">
+                    <div class="counter" id="field6"></div>
+                </div>
+                <h3>Field 6</h3>
+            </div>
+
+            <div class="element">
+                <div class="content">
+                    <div class="counter" id="field7"></div>
+                </div>
+                <h3>Field 7</h3>
+            </div>
+
+            <div class="element">            
+                <div class="content">
+                    <div class="counter" id="field8"></div>
+                </div>
+                <h3>Field 8</h3>
+            </div>
+        </div>
+    </section>
+    <script>
+        const api_url=' https://api.thingspeak.com/channels/1467703/feeds.json?api_key=X8FVHIS6RTTMJ6S8&results=1'
+        async function getdata(){
+            const response =await fetch (api_url);
+            const data=await response.json();
+            let array=(data.feeds).length-1;
+            console.log(data)
+            
+            let field1 = data.feeds[array].field1
+            let field2 = data.feeds[array].field2
+            let field3 = data.feeds[array].field3
+            let field4 = data.feeds[array].field4
+            let field5 = data.feeds[array].field5
+            let field6 = data.feeds[array].field6
+            let field7 = data.feeds[array].field7
+            let field8 = data.feeds[array].field8
+            
+
+            document.getElementById("field1").innerHTML = field1
+            document.getElementById("field2").innerHTML = field2
+            document.getElementById("field3").innerHTML = field3
+            document.getElementById("field4").innerHTML = field4
+            document.getElementById("field5").innerHTML = field5
+            document.getElementById("field6").innerHTML = field6
+            document.getElementById("field7").innerHTML = field7
+            document.getElementById("field8").innerHTML = field8
+
+            //Field 1
+            if(field1==null){
+                document.getElementById("field1").innerHTML = 0
+            }
+
+            //Field 2
+            if(field2==null)
+            {
+                document.getElementById("field2").innerHTML = 0
+            }
+
+            //Field 3
+            if(field3==null)
+            {
+                document.getElementById("field3").innerHTML = 0
+            }
+
+            //Field 4
+            if(field4==null)
+            {
+                document.getElementById("field4").innerHTML = 0
+            }
+
+            //Field 5
+            if(field5==null)
+            {
+                document.getElementById("field5").innerHTML = 0
+            }
+
+            //Field 6
+            if(field6==null)
+            {
+                document.getElementById("field6").innerHTML = 0
+            }
+
+            //Field 7
+            if(field7==null)
+            {
+                document.getElementById("field7").innerHTML = 0
+            }
+
+            //Field 8
+            if(field8==null)
+            {
+                document.getElementById("field8").innerHTML = 0
+            }
+    }
+            getdata();
+            setInterval(getdata,10000)
+            
+</script>
+
+
+</body>
+
+</html>
